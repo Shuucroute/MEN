@@ -1,0 +1,17 @@
+
+body {
+    margin: 0; /* Réinitialise la marge par défaut du corps */
+}
+
+header {
+    display: flex;
+    padding: 2%;
+}
+
+.banner {
+    height: 100px; /* Ajustez la hauteur selon vos besoins */
+}
+
+.select {
+    text-align: left;
+}
