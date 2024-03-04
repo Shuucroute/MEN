@@ -1,6 +1,6 @@
 
 body {
-    margin: 0; /* Réinitialise la marge par défaut du corps */
+    margin: 0;
 }
 
 header {
@@ -9,9 +9,14 @@ header {
 }
 
 .banner {
-    height: 100px; /* Ajustez la hauteur selon vos besoins */
+    height: 100px;
 }
 
 .select {
     text-align: left;
+}
+
+.lien{
+    color: rgb(255, 246, 246);
+    text-decoration: none;
 }
