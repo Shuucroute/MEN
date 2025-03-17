@@ -1,0 +1,37 @@
+{
+    "sections": {
+      "asso": {
+        "title": "Une asso à but non lucratif",
+        "content": "Médoc en Notes est une association à but non lucratif (loi 1901) qui gère l'école de musique basée à Soussans. Elle a pour but de continuer l'aventure initiée en 2015 par l'association L'Entre-Deux-Danses puis Golpe Musique."
+      },
+      "musique": {
+        "title": "La musique pour tous",
+        "content": "Ouverte à tous, à partir de 4 ans, l'école de musique propose des cours d'éveil musical, d'initiation à la musique ainsi que des cours individuels ou collectifs de piano, guitares, batterie, basse, ukulélé ou chant."
+      },
+      "partage": {
+        "title": "Le partage de la musique",
+        "content": "Médoc en Notes souhaite organiser un concert annuel à Soussans ainsi que des stages de découverte (ex musique assistée par ordinateur). Ses musiciens sont invités par de plus en plus d'associations et de communes médocaines pour animer des scènes ouvertes."
+      }
+    },
+    "buttons": {
+      "courses": "LES COURS",
+      "inscriptions": "INSCRIPTIONS"
+    },
+    "actu": {
+      "title": "Actu - Feuille de route",
+      "social": "Suivez-nous sur",
+      "title2": "Session 2024-25",
+      "events": [
+        "21 juillet 2025 - Fête de la musique",
+        "14 juin 2025 – Concert de fin d'année à la salle des fêtes de Soussans",
+        "Et bien plus encore..."
+      ]
+    },
+    "president": {
+        "title": "Message du président",
+        "content": "Déjà une quatirème année qui s'annonce pour Médoc en Notes. 2024-2025 sera l'année de notre deuxième fête de la musique en plus du concert de fin d'année ! On compte sur vous et vous attendons dès la rentrée de septembre pour une nouvelle année musicale !",
+        "end": "Rock on!",
+        "name": "Stéphane Liège"
+    }
+  }
+  
