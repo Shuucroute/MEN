@@ -24,6 +24,7 @@
     </section>
 
     <section class="features-section">
+<<<<<<< HEAD
       <router-link to="/teachers">
         <div class="feature-card">
           <img src="../assets/img/just_img/teachers.png" alt="Professeurs" class="feature-icon">
@@ -45,6 +46,24 @@
           <h3>Les Stages</h3>
           <p>Des stages intensifs pour approfondir vos compétences et explorer de nouveaux horizons musicaux.</p>
         </div>
+=======
+      <router-link to="/teachers" class="feature-card">
+        <img src="../assets/img/just_img/teachers.png" alt="Professeurs" class="feature-icon">
+        <h3>Les Professeurs</h3>
+        <p>Une équipe pédagogique qualifiée et passionnée pour vous guider dans votre apprentissage musical.</p>
+      </router-link>
+
+      <router-link to="/courses" class="feature-card">
+        <img src="../assets/img/just_img/courses.png" alt="Cours" class="feature-icon">
+        <h3>Les Cours</h3>
+        <p>Des cours adaptés à tous les niveaux et tous les âges, pour découvrir ou perfectionner votre pratique musicale.</p>
+      </router-link>
+
+      <router-link to="/stages" class="feature-card">
+        <img src="../assets/img/just_img/stages.jpg" alt="Stages" class="feature-icon">
+        <h3>Les Stages</h3>
+        <p>Des stages intensifs pour approfondir vos compétences et explorer de nouveaux horizons musicaux.</p>
+>>>>>>> 88c4215cf97a04517ccbce77f580cf2797a70a18
       </router-link>
     </section>
 
@@ -60,7 +79,7 @@
 <script>
 export default {
   name: 'MusicSchoolPage',
-}
+};
 </script>
 
 <style scoped>
@@ -122,6 +141,9 @@ export default {
   text-align: center;
   flex: 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .feature-card:hover {
