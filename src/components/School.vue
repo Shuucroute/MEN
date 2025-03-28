@@ -2,43 +2,56 @@
   <div class="music-school-page">
     <div class="hero-section">
       <h1>L’École de Musique de Soussans</h1>
-      <p class="subtitle">Un établissement culturel dédié à l’enseignement musical et à l’animation culturelle locale.</p>
+      <p class="subtitle">Un établissement culturel dédié à l’enseignement musical et à l’animation culturelle locale.
+      </p>
     </div>
 
     <section class="about-section">
       <h2>À Propos de l'École</h2>
       <p>
-        L’école municipale de musique de Soussans est un établissement culturel de la commune de Soussans, géré sous le statut associatif "loi 1901". Elle est animée par une équipe pédagogique passionnée et gérée par une équipe associative dévouée.
+        L'école municipale de musique de Soussans est un établissement culturel de la commune de Soussans, géré sous le
+        statut associatif "loi 1901". Elle est animée par une équipe pédagogique passionnée et gérée par une équipe
+        associative dévouée.
       </p>
       <p>
-        Nous proposons des cours pour tous les âges et tous les niveaux, couvrant une variété d'instruments : guitare (acoustique et électrique), piano, chant, batterie, basse et ukulélé.
+        Nous proposons des cours pour tous les âges et tous les niveaux, couvrant une variété d'instruments : guitare
+        (acoustique et électrique), piano, chant, batterie, basse et ukulélé.
       </p>
       <p>
-        Au-delà de l'apprentissage de la musique, notre école vise à enrichir la vie culturelle et musicale locale à travers des concerts, des scènes ouvertes et des animations musicales.
+        Au-delà de l'apprentissage de la musique, notre école vise à enrichir la vie culturelle et musicale locale à
+        travers des concerts, des scènes ouvertes et des animations musicales.
       </p>
     </section>
 
     <section class="features-section">
-      <div class="feature-card">
-        <img src="../assets/img/just_img/teachers.png" alt="Professeurs" class="feature-icon">
-        <h3>Les Professeurs</h3>
-        <p>Une équipe pédagogique qualifiée et passionnée pour vous guider dans votre apprentissage musical.</p>
-      </div>
-      <div class="feature-card">
-        <img src="../assets/img/just_img/courses.png" alt="Cours" class="feature-icon">
-        <h3>Les Cours</h3>
-        <p>Des cours adaptés à tous les niveaux et tous les âges, pour découvrir ou perfectionner votre pratique musicale.</p>
-      </div>
-      <div class="feature-card">
-        <img src="../assets/img/just_img/stages.jpg" alt="Stages" class="feature-icon">
-        <h3>Les Stages</h3>
-        <p>Des stages intensifs pour approfondir vos compétences et explorer de nouveaux horizons musicaux.</p>
-      </div>
+      <router-link to="/teachers">
+        <div class="feature-card">
+          <img src="../assets/img/just_img/teachers.png" alt="Professeurs" class="feature-icon">
+          <h3>Les Professeurs</h3>
+          <p>Une équipe pédagogique qualifiée et passionnée pour vous guider dans votre apprentissage musical.</p>
+        </div>
+      </router-link>
+      <router-link to="/courses">
+        <div class="feature-card">
+          <img src="../assets/img/just_img/courses.png" alt="Cours" class="feature-icon clickable-icon">
+          <h3>Les Cours</h3>
+          <p>Des cours adaptés à tous les niveaux et tous les âges, pour découvrir ou perfectionner votre pratique
+            musicale.</p>
+        </div>
+      </router-link>
+      <router-link to="stages">
+        <div class="feature-card">
+          <img src="../assets/img/just_img/stages.jpg" alt="Stages" class="feature-icon">
+          <h3>Les Stages</h3>
+          <p>Des stages intensifs pour approfondir vos compétences et explorer de nouveaux horizons musicaux.</p>
+        </div>
+      </router-link>
     </section>
 
     <section class="cta-section">
       <h2>Rejoignez-Nous !</h2>
-      <p>Que vous soyez débutant ou musicien confirmé, l’école de musique de Soussans vous accueille pour partager votre passion.</p>
+      <p>Que vous soyez débutant ou musicien confirmé, l'école de musique de Soussans vous accueille pour partager votre
+        passion.</p>
       <button class="cta-button">Inscrivez-vous dès maintenant</button>
     </section>
   </div>
@@ -125,6 +138,16 @@ export default {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.clickable-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.clickable-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
 .feature-card h3 {
   font-size: 1.5em;
   color: #2c3e50;
@@ -167,5 +190,11 @@ export default {
 
 .cta-button:hover {
   background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .features-section {
+    flex-direction: column;
+  }
 }
 </style>

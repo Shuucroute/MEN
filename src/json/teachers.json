@@ -1,0 +1,43 @@
+{
+  "director": {
+    "name": "Jason Boutin",
+    "image": "Jason.png",
+    "specialties": [
+      "Guitare acoustique/électrique",
+      "Chant",
+      "Batterie",
+      "Ukulélé",
+      "Atelier",
+      "Chorale"
+    ]
+  },
+  "teamMembers": [
+    {
+      "name": "Ismaëlle Mercier",
+      "image": "Isma.png",
+      "specialties": [
+        "Piano",
+        "Ukulélé",
+        "Éveil musical",
+        "Initiation",
+        "Atelier"
+      ]
+    },
+    {
+      "name": "Thomas Guillard",
+      "image": "Thomas.png",
+      "specialties": [
+        "Basse",
+        "Guitare acoustique/électrique",
+        "Banjo",
+        "Mandoline",
+        "Atelier"
+      ]
+    },
+    {
+      "name": "Laurent Dolnet",
+      "image": "Laurent.png",
+      "specialties": ["Batterie", "Atelier"]
+    }
+  ]
+}
