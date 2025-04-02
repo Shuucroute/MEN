@@ -11,12 +11,12 @@
     </div>
 
     <div class="course-cards">
-      <!-- Détail Musical -->
+      <!-- éveil Musical -->
       <div class="course-card">
-        <h2>Détail Musical</h2>
+        <h2>Eveil Musical</h2>
         <div class="course-details">
-          <p><strong>Public :</strong> Enfants scolarisés en Mayenne-Saxiane et famille Sardinier</p>
-          <p><strong>Durée :</strong> Séances de 45 minutes</p>
+          <p><strong>Public :</strong> Enfants scolarisés en Moyenne-Section et Grande Section</p>
+          <p><strong>Durée :</strong> Séances de 45 minutes  hebdomadaire</p>
           <p><strong>Programme :</strong> Découverte musicale progressive sur 10 cycles</p>
           <ul class="program-list">
             <li>Découverte du cours</li>
@@ -34,12 +34,12 @@
         <h2>Initiation</h2>
         <div class="course-details">
           <p><strong>Public :</strong> Enfants en CP et CE1 (accès direct en 1ère année)</p>
-          <p><strong>Durée :</strong> Séances de 45 minutes</p>
+          <p><strong>Durée :</strong> Séances de 45 minutes hebdomadaire</p>
           <p><strong>Objectifs :</strong></p>
           <ul class="program-list">
             <li>Découverte des familles d'instruments</li>
             <li>Choix d'un instrument principal</li>
-            <li>Initiation à la lecture musicale</li>
+            <li>Renforcer leur culture musicale</li>
             <li>Pratique du chant et des percussions</li>
           </ul>
         </div>
@@ -53,7 +53,7 @@
           <p><strong>Formules :</strong></p>
           <ul class="program-list">
             <li><strong>Individuel :</strong> 30 minutes</li>
-            <li><strong>Collectif :</strong> 50 minutes à 1 heure</li>
+            <li><strong>Collectif :</strong> 1 heure</li>
           </ul>
           <p>Apprentissage approfondi d'un instrument spécifique avec suivi personnalisé.</p>
         </div>
@@ -61,12 +61,12 @@
           <div class="price-option">
             <span class="price-label">Individuel :</span>
             <span class="price-value">420 €</span>
-            <span class="price-note">+ 40€/communication</span>
+            <span class="price-note">+ 30€ (sous condition)</span>
           </div>
           <div class="price-option">
             <span class="price-label">Collectif :</span>
             <span class="price-value">330 €</span>
-            <span class="price-note">+ 450€/communication</span>
+            <span class="price-note">+ 30€ (sous condition)</span>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@
 
       <!-- Clarande -->
       <div class="course-card">
-        <h2>Clarande</h2>
+        <h2>Chorale</h2>
         <div class="course-details">
           <p>Ateliers pour chanteurs et instrumentistes avancés. Séances de 60 minutes.</p>
           <p>Intégration dans des projets musicaux collectifs avec préparation aux examens.</p>
@@ -92,12 +92,21 @@
         <div class="price-tag">40 € (option)</div>
       </div>
     </div>
+
+    <!-- Ajout du composant MusicCalendar -->
+    <MusicCalendar />
   </div>
 </template>
 
 <script>
+// Import du composant
+import MusicCalendar from './MusicCalendar.vue';
+
 export default {
-  name: 'MusicCourses'
+  name: 'MusicCourses',
+  components: {
+    MusicCalendar
+  }
 }
 </script>
 
@@ -108,6 +117,7 @@ export default {
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
+  margin-top: 3%;
 }
 
 .header {
@@ -118,6 +128,7 @@ export default {
 .header h1 {
   font-size: 2.5rem;
   color: #2c3e50;
+  margin-top: 3%;
   margin-bottom: 0.5rem;
 }
 

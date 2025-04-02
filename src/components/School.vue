@@ -2,8 +2,7 @@
   <div class="music-school-page">
     <div class="hero-section">
       <h1>L’École de Musique de Soussans</h1>
-      <p class="subtitle">Un établissement culturel dédié à l’enseignement musical et à l’animation culturelle locale.
-      </p>
+      <p class="subtitle">Un établissement culturel dédié à l’enseignement musical et à l’animation culturelle locale.</p>
     </div>
 
     <section class="about-section">
@@ -24,29 +23,6 @@
     </section>
 
     <section class="features-section">
-<<<<<<< HEAD
-      <router-link to="/teachers">
-        <div class="feature-card">
-          <img src="../assets/img/just_img/teachers.png" alt="Professeurs" class="feature-icon">
-          <h3>Les Professeurs</h3>
-          <p>Une équipe pédagogique qualifiée et passionnée pour vous guider dans votre apprentissage musical.</p>
-        </div>
-      </router-link>
-      <router-link to="/courses">
-        <div class="feature-card">
-          <img src="../assets/img/just_img/courses.png" alt="Cours" class="feature-icon clickable-icon">
-          <h3>Les Cours</h3>
-          <p>Des cours adaptés à tous les niveaux et tous les âges, pour découvrir ou perfectionner votre pratique
-            musicale.</p>
-        </div>
-      </router-link>
-      <router-link to="stages">
-        <div class="feature-card">
-          <img src="../assets/img/just_img/stages.jpg" alt="Stages" class="feature-icon">
-          <h3>Les Stages</h3>
-          <p>Des stages intensifs pour approfondir vos compétences et explorer de nouveaux horizons musicaux.</p>
-        </div>
-=======
       <router-link to="/teachers" class="feature-card">
         <img src="../assets/img/just_img/teachers.png" alt="Professeurs" class="feature-icon">
         <h3>Les Professeurs</h3>
@@ -63,7 +39,6 @@
         <img src="../assets/img/just_img/stages.jpg" alt="Stages" class="feature-icon">
         <h3>Les Stages</h3>
         <p>Des stages intensifs pour approfondir vos compétences et explorer de nouveaux horizons musicaux.</p>
->>>>>>> 88c4215cf97a04517ccbce77f580cf2797a70a18
       </router-link>
     </section>
 
@@ -100,13 +75,13 @@ export default {
 }
 
 .hero-section h1 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   color: #2c3e50;
   margin-bottom: 10px;
 }
 
 .hero-section .subtitle {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   color: #666;
 }
 
@@ -115,20 +90,20 @@ export default {
 }
 
 .about-section h2 {
-  font-size: 2em;
+  font-size: 2rem;
   color: #2c3e50;
   margin-bottom: 20px;
 }
 
 .about-section p {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
 .features-section {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-bottom: 40px;
 }
@@ -139,11 +114,11 @@ export default {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  flex: 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
   color: inherit;
   display: block;
+  height: 100%;
 }
 
 .feature-card:hover {
@@ -158,26 +133,21 @@ export default {
   object-fit: cover;
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.clickable-icon {
-  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.clickable-icon:hover {
+.feature-card:hover .feature-icon {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .feature-card h3 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: #2c3e50;
   margin-bottom: 10px;
 }
 
 .feature-card p {
-  font-size: 1em;
+  font-size: 1rem;
   color: #666;
 }
 
@@ -190,12 +160,12 @@ export default {
 }
 
 .cta-section h2 {
-  font-size: 2em;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
 .cta-section p {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   margin-bottom: 20px;
 }
 
@@ -205,7 +175,7 @@ export default {
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 1em;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -216,7 +186,15 @@ export default {
 
 @media (max-width: 768px) {
   .features-section {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-section {
+    padding: 40px 20px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
   }
 }
 </style>
