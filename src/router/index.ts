@@ -5,7 +5,7 @@ import Asso from '../components/Asso.vue';
 import School from '../components/School.vue';
 import Teachers from '../components/Teachers.vue';
 import Courses from '../components/Courses.vue';
-
+import  advance_enrolment  from '../components/Advance_enrolment.vue';
 
 
 const routes = [
@@ -15,6 +15,7 @@ const routes = [
     { path: '/school', component: School },
     { path: '/teachers', component: Teachers },
     { path: '/courses', component: Courses },
+    { path: '/advance_enrolment', component: advance_enrolment },
 ];
 
 const router = createRouter({

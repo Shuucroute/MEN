@@ -1,17 +1,17 @@
 <template>
   <div class="association-page">
-    <h1>L’Association</h1>
-    <p class="intro-text">Médoc en Notes est une association à but non lucratif (loi 1901), créée en juillet 2021. Elle gère l’école de musique basée à Soussans et a pour but de continuer l’aventure initiée en 2015 par l’association L’Entre-Deux-Danses puis Golpe Musique.</p>
+    <h1>L'Association</h1>
+    <p class="intro-text">Médoc en Notes est une association à but non lucratif (loi 1901), créée en juillet 2021. Elle gère l'école de musique basée à Soussans et a pour but de continuer l'aventure initiée en 2015 par l'association L'Entre-Deux-Danses puis Golpe Musique.</p>
 
     <section class="mission-section">
       <h2>Nos Missions</h2>
       <ul class="mission-list">
-        <li><strong>Équiper l’école</strong> : Nous équipons l’école pour ses activités (instruments, équipements) grâce aux cotisations d’adhésion et aux subventions.</li>
-        <li><strong>Rétribution équitable</strong> : Nous veillons à une juste rétribution de notre équipe pédagogique grâce aux tarifs d’inscription aux cours.</li>
-        <li><strong>Promotion</strong> : Nous promouvons l’école à travers des impressions, le web et les réseaux sociaux.</li>
-        <li><strong>Écoute et adaptation</strong> : Nous sommes à l’écoute des besoins et des envies des élèves, enseignants et partenaires municipaux.</li>
-        <li><strong>Valorisation de la pratique musicale</strong> : Nous valorisons la pratique musicale de l’école et participons à des animations lors de diverses manifestations associatives ou municipales, en plus d’organiser un concert de fin d’année.</li>
-        <li><strong>Intercommunalité musicale</strong> : Nous développons une intercommunalité musicale pour faciliter l’accès à la pratique de la musique pour tous et multiplier les opportunités de manifestations musicales et culturelles au sein du Médoc.</li>
+        <li><strong>Équiper l'école</strong> : Nous équipons l'école pour ses activités (instruments, équipements) grâce aux cotisations d'adhésion et aux subventions.</li>
+        <li><strong>Rétribution équitable</strong> : Nous veillons à une juste rétribution de notre équipe pédagogique grâce aux tarifs d'inscription aux cours.</li>
+        <li><strong>Promotion</strong> : Nous promouvons l'école à travers des impressions, le web et les réseaux sociaux.</li>
+        <li><strong>Écoute et adaptation</strong> : Nous sommes à l'écoute des besoins et des envies des élèves, enseignants et partenaires municipaux.</li>
+        <li><strong>Valorisation de la pratique musicale</strong> : Nous valorisons la pratique musicale de l'école et participons à des animations lors de diverses manifestations associatives ou municipales, en plus d'organiser un concert de fin d'année.</li>
+        <li><strong>Intercommunalité musicale</strong> : Nous développons une intercommunalité musicale pour faciliter l'accès à la pratique de la musique pour tous et multiplier les opportunités de manifestations musicales et culturelles au sein du Médoc.</li>
       </ul>
       <div class="support-section">
         <p class="thanks">Médoc en Notes bénéficie du soutien financier de la Mairie de Soussans et du Département de Gironde.</p>
@@ -54,28 +54,6 @@
           </div>
         </div>
       </div>
-      <div class="bureau">
-        <h3>Bureau 2022-2023</h3>
-        <ul class="team-list">
-          <li><strong>Président</strong> : Stéphane Liege</li>
-          <li><strong>Vice-Président</strong> : Jean-Pierre Crouail</li>
-          <li><strong>Trésorier</strong> : Coralie Bardinet</li>
-          <li><strong>Vice-Trésorier</strong> : Jérôme Rampnoux</li>
-          <li><strong>Secrétaire</strong> : Sylvain Dussap</li>
-          <li><strong>Vice-Secrétaire</strong> : Gilles Pereira</li>
-        </ul>
-      </div>
-      <div class="bureau">
-        <h3>Bureau 2021-2022</h3>
-        <ul class="team-list">
-          <li><strong>Président</strong> : Stéphane Liege</li>
-          <li><strong>Vice-Président</strong> : Jean-Pierre Crouail</li>
-          <li><strong>Trésorier</strong> : Coralie Bardinet</li>
-          <li><strong>Vice-Trésorier</strong> : Laurent Bardinet</li>
-          <li><strong>Secrétaire</strong> : Jérôme Rampnoux</li>
-          <li><strong>Vice-Secrétaire</strong> : Gilles Pereira</li>
-        </ul>
-      </div>
     </section>
 
     <section class="contact-section">
@@ -86,24 +64,29 @@
         <p><strong>Email</strong> : medocennotes@gmail.com</p>
         <p><strong>Téléphone</strong> : 07 80 18 83 16 (Jason Boutin)</p>
       </div>
-      <form class="contact-form">
+      <form class="contact-form" @submit.prevent="submitForm">
         <div class="form-group">
-          <label for="name">Nom</label>
-          <input type="text" id="name" placeholder="Votre nom">
+          <label for="name">Nom *</label>
+          <input type="text" id="name" v-model="formData.name" placeholder="Votre nom" required>
         </div>
         <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="Votre e-mail">
+          <label for="email">E-mail *</label>
+          <input type="email" id="email" v-model="formData.email" placeholder="Votre e-mail" required>
         </div>
         <div class="form-group">
           <label for="phone">Téléphone</label>
-          <input type="tel" id="phone" placeholder="Votre téléphone">
+          <input type="tel" id="phone" v-model="formData.phone" placeholder="Votre téléphone">
         </div>
         <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" placeholder="Rédigez votre message ici..."></textarea>
+          <label for="message">Message *</label>
+          <textarea id="message" v-model="formData.message" placeholder="Rédigez votre message ici..." required></textarea>
         </div>
-        <button type="submit">ENVOYER</button>
+        <button type="submit" :disabled="isSending">
+          {{ isSending ? 'Envoi en cours...' : 'ENVOYER' }}
+        </button>
+        <div v-if="sendStatus" class="status-message" :class="{ 'success': sendStatus.success, 'error': !sendStatus.success }">
+          {{ sendStatus.message }}
+        </div>
       </form>
     </section>
   </div>
@@ -112,6 +95,54 @@
 <script>
 export default {
   name: 'AssociationPage',
+  data() {
+    return {
+      formData: {
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      },
+      isSending: false,
+      sendStatus: null
+    };
+  },
+  methods: {
+    async submitForm() {
+      this.isSending = true;
+      this.sendStatus = null;
+      
+      try {
+        const response = await fetch('http://localhost:3001/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(this.formData),
+        });
+
+        const data = await response.json();
+        
+        if (!response.ok) {
+          throw new Error(data.message || 'Erreur lors de l\'envoi du message');
+        }
+
+        this.sendStatus = { 
+          success: true, 
+          message: data.message || 'Message envoyé avec succès!' 
+        };
+        this.formData = { name: '', email: '', phone: '', message: '' };
+      } catch (error) {
+        console.error('Erreur:', error);
+        this.sendStatus = { 
+          success: false, 
+          message: error.message || 'Une erreur est survenue. Veuillez réessayer plus tard.' 
+        };
+      } finally {
+        this.isSending = false;
+      }
+    }
+  }
 }
 </script>
 
@@ -138,7 +169,7 @@ h1, h2, h3 {
   margin-bottom: 40px;
 }
 
-.mission-list, .team-list {
+.mission-list {
   list-style-type: disc;
   margin-left: 20px;
   line-height: 1.6;
@@ -158,22 +189,14 @@ h1, h2, h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px; /* Espacement entre les logos */
+  gap: 40px;
   margin-top: 20px;
 }
 
 .support-images img {
-  max-height: 80px; /* Hauteur maximale pour les logos */
-  width: auto; /* Largeur ajustée automatiquement pour conserver les proportions */
-  object-fit: contain; /* Assure que les logos ne sont pas déformés */
-}
-
-.logo-departement {
-  max-height: 100px; /* Ajustement spécifique pour le logo du Département de Gironde */
-}
-
-.logo-mairie {
-  max-height: 80px; /* Ajustement spécifique pour le logo de la Mairie de Soussans */
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
 .bureau-grid {
@@ -248,6 +271,11 @@ input, textarea {
   font-size: 1em;
 }
 
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
 button {
   padding: 10px 20px;
   background-color: #2c3e50;
@@ -257,9 +285,39 @@ button {
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
 button:hover {
   background-color: #34495e;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.status-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+label[required]::after {
+  content: " *";
+  color: #e74c3c;
 }
 </style>
