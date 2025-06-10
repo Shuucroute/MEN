@@ -38,10 +38,10 @@
 <script>
 import teachersData from '../json/teachers.json'
 
-import JasonImg from '../assets/img/prof/Jason.png'
-import IsmaImg from '../assets/img/prof/Isma.png'
-import ThomasImg from '../assets/img/prof/Thomas.png'
-import LaurentImg from '../assets/img/prof/Laurent.png'
+import JasonImg from '@/assets/img/prof/Jason.png'
+import IsmaImg from '@/assets/img/prof/Isma.png'
+import ThomasImg from '@/assets/img/prof/Thomas.png'
+import LaurentImg from '@/assets/img/prof/Laurent.png'
 
 export default {
   data() {
