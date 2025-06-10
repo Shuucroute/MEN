@@ -1,5 +1,5 @@
 <template>
-  <Footer class="foot">
+  <footer class="foot">
     <div class="container">
       <!-- Logo -->
       <div class="logo">
@@ -35,7 +35,7 @@
         <a href="#">Politique de confidentialité</a>
       </div>
     </div>
-  </Footer>
+  </footer>
 </template>
 
 <style scoped>
