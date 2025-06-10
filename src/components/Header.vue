@@ -1,5 +1,5 @@
 <template>
-  <header :class="['header', { 'header-enter': isMounted }]">
+  <Header :class="['header', { 'header-enter': isMounted }]">
     <!-- Image conteneur -->
     <div class="logo-container">
       <img src="../assets/img/just_img/logo.png" alt="logo" />
@@ -12,7 +12,7 @@
       <router-link to="/inscription" class="nav-link" active-class="active-link">Inscriptions</router-link>
       <router-link to="/asso" class="nav-link" active-class="active-link">L'asso</router-link>
     </nav>
-  </header>
+  </Header>
 </template>
 
 <script>
