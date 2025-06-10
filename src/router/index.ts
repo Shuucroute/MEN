@@ -6,9 +6,6 @@ import School from '../components/School.vue';
 import Teachers from '../components/Teachers.vue';
 import Courses from '../components/Courses.vue';
 import  advance_enrolment  from '../components/Advance_enrolment.vue';
-import auth from '../components/AuthPage.vue';
-import register from '../components/RegisterPage.vue';
-import comments from '../components/Comments.vue';
 
 
 const routes = [
@@ -19,9 +16,6 @@ const routes = [
     { path: '/teachers', component: Teachers },
     { path: '/courses', component: Courses },
     { path: '/advance_enrolment', component: advance_enrolment },
-    { path: '/auth', component: auth },
-    { path: '/register', component: register },
-    { path: '/comments', component: comments },
 ];
 
 const router = createRouter({
