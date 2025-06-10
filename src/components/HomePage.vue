@@ -18,6 +18,12 @@
       <div class="buttons">
         <button>{{ content.buttons.courses }}</button>
         <button>{{ content.buttons.inscriptions }}</button>
+        <router-link to="/auth">
+          <button>Connexion</button>
+        </router-link>
+        <router-link to="/comments">
+          <button class="view-comments-btn">Voir tous les commentaires</button>
+        </router-link>
       </div>
     </section>
 
@@ -51,23 +57,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import content from '../json/text.json';
-import image1 from '../assets/img/just_img/image_1.jpg';
-import image2 from '../assets/img/just_img/image_2.jpg';
-import image3 from '../assets/img/just_img/image_3.jpg';
-import image4 from '../assets/img/just_img/image_4.jpg';
+import { ref } from 'vue'
+import content from '../json/text.json'
+import image1 from '../assets/img/just_img/image_1.jpg'
+import image2 from '../assets/img/just_img/image_2.jpg'
+import image3 from '../assets/img/just_img/image_3.jpg'
+import image4 from '../assets/img/just_img/image_4.jpg'
 
-const images = [image1, image2, image3, image4];
-const currentIndex = ref(0);
+const images = [image1, image2, image3, image4]
+const currentIndex = ref(0)
 
 const nextSlide = () => {
-  currentIndex.value = (currentIndex.value + 1) % images.length;
-};
+  currentIndex.value = (currentIndex.value + 1) % images.length
+}
 
 const prevSlide = () => {
-  currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
-};
+  currentIndex.value = (currentIndex.value - 1 + images.length) % images.length
+}
+
 </script>
 
 <style scoped>
@@ -233,5 +240,74 @@ const prevSlide = () => {
   font-size: 1.1rem;
   margin: 5px 0;
   padding-left: 10px;
+}
+
+.view-comments-btn {
+  margin-top: 1rem;
+  background-color: #4CAF50 !important;
+}
+
+.view-comments-btn:hover {
+  background-color: #45a049 !important;
+}
+
+/* Styles pour la section commentaires */
+.comment-section {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment-section h2 {
+  color: #793e4d;
+  margin-bottom: 1rem;
+}
+
+.comment-input,
+.comment-textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.comment-input:focus,
+.comment-textarea:focus {
+  border-color: #e64a19;
+  outline: none;
+}
+
+.comment-button {
+  background-color: #663d47;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.comment-button:hover {
+  background-color: #e64a19;
+}
+
+.success {
+  color: green;
+  margin-top: 1rem;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
 }
 </style>
